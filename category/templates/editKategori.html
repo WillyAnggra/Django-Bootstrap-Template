@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="card p-5 w-50">
+        <h2 class="mb-4">Masukan Nama Kategori</h2>
+        <form action="{% url 'updateKategori' kategori.id %}" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <div class="mt-4 d-flex flex-row-reverse">
+                <button type="submit" class="btn btn-primary">Edit</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
